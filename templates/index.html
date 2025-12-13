@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Pitch Hub</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+        <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-lightbulb"></i>
+                <span>CampusPitchHub</span>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#approved">Approved Projects</a>
+                <a href="#how">How It Works</a>
+                <a href="#testimonials">Success Stories</a>
+            </div>
+            
+            <button class="cta-button">
+                <i class="fas fa-rocket"></i>
+                Launch Your Idea
+            </button>
+            </div>
+    </nav>
+
+
+    <!-- Hero section -->
+   <section class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">
+                <span>Where</span>
+                <span>Campus</span>
+                <span>Ideas</span>
+                <span>Become Reality</span>
+
+        <p class="hero-subtitle">
+            Pitch, collaborate, and build with fellow students. 
+            Turn your ideas into successful projects.
+        </p>
+        <div class="hero-buttons">
+            <a href="/submit-pitch" class="btn-primary">Submit Your Pitch</a>
+            <button class="btn-secondary">Explore projects</button>
+        </div>
+    </div>
+</section>
+ <!-- Feature section -->
+<section class="features">
+    <!-- Header -->
+    <div class="features-header">
+        <h2>Our Unique Features</h2>
+        <p>What makes CampusPitchHub special</p>
+    </div>
+    
+    <!-- Cards Container - ADD THIS -->
+    <div class="cards-container">
+        <!-- Card 1 -->
+        <div class="feature-card">
+            <div class="card-icon">🤝</div>
+            <h3>Connect & Build Together</h3>
+            <p>Students from all over the branches can collaborate and build a startup</p>
+        </div>
+        
+        <!-- Card 2 - ADD THIS -->
+        <div class="feature-card">
+            <div class="card-icon">🏆</div>
+            <h3>Idea Ranking System</h3>
+            <p>Your ideas are also ranked by experts in the college </p>
+        </div>
+        
+        <!-- Card 3 - ADD THIS -->
+        <div class="feature-card">
+            <div class="card-icon">💼</div>
+            <h3>College-Backed Support</h3>
+            <p>Get opportunity to work with college startup ideas</p>
+        </div>
+    </div>
+</section>
+    <!-- approved project section -->
+
+    <section id="approved" class="approved-projects">
+    <h2>Approved Student Projects</h2>
+
+    {% if approved_pitches %}
+        <div class="project-grid">
+            {% for p in approved_pitches %}
+                <div class="project-card">
+                    <h3>{{ p.pitch_title }}</h3>
+                    <p>{{ p.pitch_description }}</p>
+                    <small>By {{ p.full_name }} ({{ p.branch }}), Sem {{ p.semester }}</small>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No approved projects yet.</p>
+    {% endif %}
+</section>
+    <script src="{{ url_for('static',filename='script.js')}}"></script>
+</body>
+</html>

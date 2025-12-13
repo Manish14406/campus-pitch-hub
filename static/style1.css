@@ -1,0 +1,77 @@
+/* style1.css - Start with basics */
+.page-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+.verification-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    border: 3px solid #667eea; /* Bold border */
+}
+.verification-card {
+    background:white;
+    border: 3px solid #764ba2;
+    box-shadow: 0 10px 30px rgba(118, 75, 162, 0.15);
+}
+
+.verify-btn {
+    width: 100%;
+    padding: 14px;
+    background: #764ba2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block; /* Makes it take full width */
+    margin-top: 10px;
+}
+
+.verify-btn:hover {
+    background: #667eea;
+}
+
+.email-input {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    display: block; /* Makes it take full width */
+}
+
+.email-input:focus {
+    outline: none;
+    border-color: #764ba2;
+}
+
+
+.verify-btn {
+    width: 100%;
+    padding: 14px;
+    background: #764ba2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block; /* Makes it take full width */
+    margin-top: 10px;
+    text-decoration: none;
+    display:inline-block;
+}
+
+.verify-btn:hover {
+    background: #667eea;
+}

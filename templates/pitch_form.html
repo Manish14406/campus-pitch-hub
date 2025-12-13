@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitch submission - CampusPitchHub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body>
+    <div class="pitch-form-container">
+
+        <header class="form-header">
+            <h1>Submit your pitch</h1>
+            <p class="subtitle">Share your innovative idea with the campus community</p>
+        </header>
+
+        <!-- FORM STARTS HERE -->
+        <form action="/pitch-submit-form" method="POST">
+
+            <!-- Email (auto-filled) -->
+            <div class="form-section">
+                <h2>Your Registered Email</h2>
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" name="email" value="{{ session['student_email'] }}" readonly>
+                </div>
+            </div>
+
+            <!-- Personal Info -->
+            <section class="form-section">
+                <h2>1. Personal Information</h2>
+
+                <div class="form-group">
+                    <label for="full-name">Full Name *</label>
+                    <input type="text" id="full-name" name="full_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="branch">Branch/Department *</label>
+                    <input type="text" id="branch" name="branch" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="semester">Semester *</label>
+                    <input type="number" id="semester" name="semester" min="1" max="8" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+            </section>
+
+            <!-- Pitch Info -->
+            <section class="form-section">
+                <h2>2. Pitch Details</h2>
+
+                <div class="form-group">
+                    <label for="pitch-title">Pitch Title *</label>
+                    <input type="text" id="pitch-title" name="pitch_title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pitch-description">Pitch Description *</label>
+                    <textarea id="pitch-description" name="pitch_description" rows="5" placeholder="Describe your idea in detail..." required></textarea>
+                </div>
+            </section>
+
+            <button type="submit" class="submit-btn">Submit Pitch</button>
+
+        </form>
+        <!-- FORM ENDS -->
+    </div>
+</body>
+</html>

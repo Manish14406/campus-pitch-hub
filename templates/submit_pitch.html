@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Pitch - CampusPitchHub</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style1.css')}}">
+</head>
+<body>
+    <div class="page-container">
+        <!-- We'll add content here step by step -->
+
+      <div class="page-container">
+    <div class="verification-container">
+        <div class="verification-card">
+            <h2>Student Verification</h2>
+            <p class="instructions">Enter your REVA University email to continue</p>
+            
+            <div class="input-group">
+                <input 
+                    type="email" 
+                    id="student-email"
+                    placeholder="username@reva.edu.in"
+                    class="email-input"
+                >
+            </div>
+            
+            <button id="check-email" class="verify-btn">
+                Verify Email
+            </button> 
+            <p id="result" class="result-message"></p>
+        </div>
+    </div>
+</div>
+    <script src="{{ url_for('static',filename='script1.js')}}"></script>
+</body>
+</html>
